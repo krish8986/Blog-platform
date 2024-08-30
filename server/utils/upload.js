@@ -12,10 +12,11 @@ const password = process.env.DB_PASSWORD;
 
 const storage = new GridFsStorage({
     // url: `mongodb://${username}:${password}@ac-ovsyiqv-shard-00-00.v6sjfot.mongodb.net:27017,ac-ovsyiqv-shard-00-01.v6sjfot.mongodb.net:27017,ac-ovsyiqv-shard-00-02.v6sjfot.mongodb.net:27017/?ssl=true&replicaSet=atlas-11wdgc-shard-0&authSource=admin&retryWrites=true&w=majority&appName=Blog-App`,
-    url: `mongodb://${username}:${password}@ac-ovsyiqv-shard-00-00.v6sjfot.mongodb.net:27017,ac-ovsyiqv-shard-00-01.v6sjfot.mongodb.net:27017,ac-ovsyiqv-shard-00-02.v6sjfot.mongodb.net:27017/?ssl=true&replicaSet=atlas-11wdgc-shard-0&authSource=admin&retryWrites=true&w=majority&appName=Blog-App`,
+    // url: `mongodb://${username}:${password}@ac-ovsyiqv-shard-00-00.v6sjfot.mongodb.net:27017,ac-ovsyiqv-shard-00-01.v6sjfot.mongodb.net:27017,ac-ovsyiqv-shard-00-02.v6sjfot.mongodb.net:27017/?ssl=true&replicaSet=atlas-11wdgc-shard-0&authSource=admin&retryWrites=true&w=majority&appName=Blog-App`,
     // url: `mongodb://${username}:${password}@blog-app.v6sjfot.mongodb.net/?retryWrites=true&w=majority&appName=Blog-App`,
     // url: `mongodb+srv://${username}:${password}@blog-app.v6sjfot.mongodb.net/?retryWrites=true&w=majority&appName=Blog-App`,
-    options: { useNewUrlParser: true },
+    url: `mongodb+srv://${username}:${password}@blog-app.v6sjfot.mongodb.net/?retryWrites=true&w=majority&appName=Blog-App`
+    options: {},
     file: (request, file) => {
         const match = ["image/png", "image/jpg"];
         
