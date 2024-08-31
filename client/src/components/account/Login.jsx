@@ -114,6 +114,7 @@ const Login = ({isUserAuthenticated}) => {
 
     const loginUser = async () => {
         // console.log(login);
+        try{
         let response = await API.userLogin(login);
         console.log(response);
         if (response.isSuccess) {
@@ -127,6 +128,10 @@ const Login = ({isUserAuthenticated}) => {
         } else {
             setError('something went wrong! please try again later');
         }
+        }catch (error) {
+        console.error('Login error:', error);
+        setError('Server error occurred. Please try again later.');
+    }
     };
 
     // lecture 1 from 134 except name and onChange function in textfield,point number 145, point number 157 to 168.....checked no error....
