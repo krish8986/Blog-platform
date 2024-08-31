@@ -35,7 +35,7 @@ export const loginUser = async (request, response) => {
             const accessToken = jwt.sign(user.toJSON(), process.env.ACCESS_SECRET_KEY, { expiresIn: '15m'});
             const refreshToken = jwt.sign(user.toJSON(), process.env.REFRESH_SECRET_KEY);
 
-            const newToken = new Token({ token: refreshToken }).env
+            const newToken = new Token({ token: refreshToken })
             await newToken.save();
 
         return response.status(200).json({ accessToken: accessToken, refreshToken: refreshToken, name: user.name, username: user.username})
