@@ -22,7 +22,7 @@ const Image = styled('img')({
     objectFit: 'cover'
 })
 // 
-const styledFormControl = styled(FormControl)`
+const StyledFormControl = styled(FormControl)`
     margin-top: 10px;
     display: flex;
     flex-direction: row;
@@ -106,7 +106,7 @@ const Update = () => {
         <Container>
             <Image src={url} alt="banner" />
 // 
-            <styledFormControl>
+            <StyledFormControl>
                 <label htmlFor="fileInput">
                     <Add />
                 </label>
@@ -119,7 +119,7 @@ const Update = () => {
 // 
                 <InputTextField placeholder='Title' value={post.title} onChange={(e) => handleChange(e)} name="title" />
                 <Button variant="contained" onClick={() => updateBlogPost()}>Update</Button>
-            </styledFormControl>
+            </StyledFormControl>
 // 
             <Textarea
                 minRows={5}
