@@ -16,7 +16,7 @@ background: #6495ED;
 color: #fff;
 `;
 // 
-const styledLink = styled(Link)`
+const StyledLink = styled(Link)`
     text-decoration: none;
     color: #fff;
     `;
@@ -28,17 +28,17 @@ const Categories = () => {
  
     return (
         <>
-        <styledLink to={`/create?category=${category || ''}`}>
+        <StyledLink to={`/create?category=${category || ''}`}>
         <StyledButton variant="contained">CREATE BLOG</StyledButton>
-        </styledLink>
+        </StyledLink>
         
          
           <StyledTable>
             <TableHead>
                 <TableRow>
                     <TableCell>
-                        <styledLink to='/'> All Categories
-                        </styledLink>
+                        <StyledLink to='/'> All Categories
+                        </StyledLink>
                        
                     </TableCell>
                 </TableRow>
@@ -48,9 +48,9 @@ const Categories = () => {
                     categories.map(category => (
                         <TableRow key={category.id}>
                               <TableCell>
-                                <styledLink to={`/?category=${category.type}`}>
+                                <StyledLink to={`/?category=${category.type}`}>
                                 {category.type}
-                                </styledLink> 
+                                </StyledLink> 
                               </TableCell>
                         </TableRow>
                     ))
